@@ -1,0 +1,12 @@
+<div *ngFor="let todo of todos">
+    <div [class.completed]="todo.completed" class="todo-item">
+      <input
+        type="checkbox"
+        [(ngModel)]="todo.completed"
+        (change)="markCompleted(todo)"
+      />
+      {{ todo.description }}
+      <button (click)="deleteTodo(todo._id)">Delete</button>
+    </div>
+  </div>
+  
